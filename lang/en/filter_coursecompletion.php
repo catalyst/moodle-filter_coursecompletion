@@ -23,7 +23,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['filtername'] = 'Course/Activity completion';
+$string['filtername'] = 'Course & Activity Completion Filter';
 $string['completeicon'] = 'Icon for complete courses';
 $string['completeicon_desc'] = 'PNG images with a transparent background work best';
 $string['incompleteicon'] = 'Icon for incomplete courses';
