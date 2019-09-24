@@ -44,7 +44,7 @@ function filter_coursecompletion_pluginfile($course, $cm, $context, $filearea, $
     \core\session\manager::write_close(); // Unlock session during file serving.
 
     $isicon = ($filearea === 'completeicon' || $filearea === 'incompleteicon' || $filearea === 'inprogressicon');
-    $isacticon = ($filearea === 'completeacticon' || $filearea === 'incompleteacticon' || $filearea === 'inprogressacticon');
+    $isacticon = ($filearea === 'completeacticon' || $filearea === 'incompleteacticon' || $filearea === 'inprogressacticon' || $filearea ==='completefailacticon');
     if ($context->contextlevel == CONTEXT_SYSTEM && ($isicon || $isacticon)) {
         require_once("$CFG->libdir/filelib.php");
 
