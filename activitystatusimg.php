@@ -34,7 +34,7 @@ if (empty($completion)) {
 }
 
 //Three types of possible completion
-if($completion->completionstate == COMPLETION_COMPLETE || $completion->completionstate == COMPLETION_COMPLETE_RPL || $completion->completionstate == COMPLETION_COMPLETE_PASS) {
+if($completion->completionstate == COMPLETION_COMPLETE || $completion->completionstate == COMPLETION_COMPLETE_PASS) {
     print_icon('completeacticon');
     return;
 }

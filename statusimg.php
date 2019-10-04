@@ -38,6 +38,10 @@ if ($completion->status == COMPLETION_STATUS_INPROGRESS) {
     return;
 }
 
+if (!defined('COMPLETION_STATUS_COMPLETEVIARPL')) {
+    define('COMPLETION_STATUS_COMPLETEVIARPL', '');
+}
+
 if ($completion->status != COMPLETION_STATUS_COMPLETE && $completion->status != COMPLETION_STATUS_COMPLETEVIARPL) {
     print_icon('incompleteicon');
     return;
