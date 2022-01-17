@@ -36,3 +36,4 @@ $string['incompleteacticon'] = 'Icon for activity not completed';
 $string['incompleteacticon_desc'] = 'PNG images with a transparent background work best';
 $string['completefailacticon'] = 'Icon for failed activity';
 $string['completefailacticon_desc'] = 'PNG images with a transparent background work best';
+$string['privacy:metadata'] = 'The Course & Activity Completion plugin does not store any personal data.';
