@@ -40,18 +40,22 @@
 function filter_coursecompletion_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     global $CFG;
 
-
     \core\session\manager::write_close(); // Unlock session during file serving.
 
     $isicon = ($filearea === 'completeicon' || $filearea === 'incompleteicon' || $filearea === 'inprogressicon');
-    $isacticon = ($filearea === 'completeacticon' || $filearea === 'incompleteacticon' || $filearea === 'inprogressacticon' || $filearea ==='completefailacticon');
-    if ($context->contextlevel == CONTEXT_SYSTEM && ($isicon || $isacticon)) {
+    $isacticon = ($filearea === 'completeacticon' || $filearea === 'incompleteacticon' || $filearea === 'inprogressacticon'
+    || $filearea === 'completefailacticon');
+    $isicon2 = ($filearea === 'completeicon2' || $filearea === 'incompleteicon2' || $filearea === 'inprogressicon2');
+    $isacticon2 = ($filearea === 'completeacticon2' || $filearea === 'incompleteacticon2' || $filearea === 'inprogressacticon2'
+    || $filearea === 'completefailacticon2');
+
+    if ($context->contextlevel == CONTEXT_SYSTEM && ($isicon || $isacticon || $isicon2 || $isacticon2)) {
         require_once("$CFG->libdir/filelib.php");
 
         $syscontext = context_system::instance();
         $component = 'filter_coursecompletion';
 
-        $lifetime = 60*60*24*60;
+        $lifetime = 60 * 60 * 24 * 60;
         array_shift($args);
         $fs = get_file_storage();
         $relativepath = implode('/', $args);

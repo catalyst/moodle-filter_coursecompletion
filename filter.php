@@ -27,11 +27,11 @@
 class filter_coursecompletion extends moodle_text_filter {
 
     public function filter($text, array $options = array()) {
-        if(!is_string($text) || empty($text)) {
+        if (!is_string($text) || empty($text)) {
             return $text;
         }
-        //avoid doing regex if we can get away with it
-        if(strpos($text, '[[course_completion:')) {
+        // Avoid doing regex if we can get away with it.
+        if (strpos($text, '[[course_completion:')) {
             $text = preg_replace_callback('/\[\[course_completion:(.*?)\]\]/', function ($matches) {
                 global $CFG;
 
@@ -43,7 +43,7 @@ class filter_coursecompletion extends moodle_text_filter {
 
             }, $text);
         }
-        if(strpos($text, '[[activity_completion:')) {
+        if (strpos($text, '[[activity_completion:')) {
             $text = preg_replace_callback('/\[\[activity_completion:(.*?)\]\]/', function ($matches) {
                 global $CFG;
 
@@ -54,8 +54,32 @@ class filter_coursecompletion extends moodle_text_filter {
                 return $img;
 
             }, $text);
-
         }
-        return $text;
+        if (strpos($text, '[[course_completion2:')) {
+            $text = preg_replace_callback('/\[\[course_completion2:(.*?)\]\]/', function ($matches) {
+                global $CFG;
+                $iconset = 2;
+                $idnumber = clean_param($matches[1], PARAM_TEXT);
+                $src = $CFG->wwwroot.'/filter/coursecompletion/statusimg.php?shortname='.urlencode($idnumber)
+                ."&iconset=".$iconset;
+                $img = '<img src="'.$src.'" />';
+
+                return $img;
+
+            }, $text);
+        }
+        if (strpos($text, '[[activity_completion2:')) {
+            $text = preg_replace_callback('/\[\[activity_completion2:(.*?)\]\]/', function ($matches) {
+                global $CFG;
+                $iconset = 2;
+                $idnumber = clean_param($matches[1], PARAM_TEXT);
+                $src = $CFG->wwwroot.'/filter/coursecompletion/activitystatusimg.php?idnumber='.urlencode($idnumber)
+                ."&iconset=".$iconset;
+                $img = '<img src="'.$src.'" />';
+
+                return $img;
+
+            }, $text);
+        }        return $text;
     }
 }
