@@ -4,7 +4,7 @@ require(dirname(__FILE__).'/../../config.php');
 require_once($CFG->dirroot.'/lib/completionlib.php');
 
 $idnumber = required_param('idnumber', PARAM_TEXT);
-$iconset = optional_param('iconset', '', PARAM_TEXT);
+$iconset = optional_param('iconset', '', PARAM_INT);
 
 $completeacticon = 'completeacticon'.$iconset;
 $incompleteacticon = 'incompleteacticon'.$iconset;

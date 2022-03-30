@@ -4,7 +4,7 @@ require(dirname(__FILE__).'/../../config.php');
 require_once($CFG->dirroot.'/completion/completion_completion.php');
 
 $shortname = required_param('shortname', PARAM_TEXT);
-$iconset = optional_param('iconset', '', PARAM_TEXT);
+$iconset = optional_param('iconset', '', PARAM_INT);
 
 $completeicon = 'completeicon'.$iconset;
 $incompleteicon = 'incompleteicon'.$iconset;
