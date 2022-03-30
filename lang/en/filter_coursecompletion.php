@@ -24,6 +24,8 @@
  */
 
 $string['filtername'] = 'Course & Activity Completion';
+$string['firstset'] = 'Icons set 1';
+$string['secondset'] = 'Icons set 2';
 $string['completeicon'] = 'Icon for complete courses';
 $string['completeicon_desc'] = 'PNG images with a transparent background work best';
 $string['incompleteicon'] = 'Icon for incomplete courses';
@@ -36,4 +38,18 @@ $string['incompleteacticon'] = 'Icon for activity not completed';
 $string['incompleteacticon_desc'] = 'PNG images with a transparent background work best';
 $string['completefailacticon'] = 'Icon for failed activity';
 $string['completefailacticon_desc'] = 'PNG images with a transparent background work best';
+
+$string['completeicon2'] = 'Icon for complete courses';
+$string['completeicon2_desc'] = 'PNG images with a transparent background work best';
+$string['incompleteicon2'] = 'Icon for incomplete courses';
+$string['incompleteicon2_desc'] = 'PNG images with a transparent background work best';
+$string['inprogressicon2'] = 'Icon for in-progress courses';
+$string['inprogressicon2_desc'] = 'PNG images with a transparent background work best';
+$string['completeacticon2'] = 'Icon for completed activity';
+$string['completeacticon2_desc'] = 'PNG images with a transparent background work best';
+$string['incompleteacticon2'] = 'Icon for activity not completed';
+$string['incompleteacticon2_desc'] = 'PNG images with a transparent background work best';
+$string['completefailacticon2'] = 'Icon for failed activity';
+$string['completefailacticon2_desc'] = 'PNG images with a transparent background work best';
+
 $string['privacy:metadata'] = 'The Course & Activity Completion plugin does not store any personal data.';
