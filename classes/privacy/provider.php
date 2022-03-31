@@ -24,8 +24,6 @@
 
 namespace filter_coursecompletion\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Privacy Subsystem for filter_coursecompletion implementing null_provider.
  *
